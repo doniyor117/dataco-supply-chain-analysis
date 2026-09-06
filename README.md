@@ -32,7 +32,7 @@ The report has two pages: a metrics/visuals page (above) and a written insights 
 
 - **Revenue and margin don't move together.** Fishing is the top revenue category (~$6.2M) but sits at a mid-tier 12.15% margin. Garden (14.31%) and Crafts (14.81%) carry far less revenue but convert better per dollar sold — a case for growing an underweighted category rather than just optimizing the biggest one.
 - **55% of all orders arrive late**, and shipping cancellations are a comparably sized slice of the delivery-status breakdown — not a rounding error next to lateness, a distinct problem.
-- **Late-delivery rate doesn't track shipping-mode speed.** Average shipping time scales down cleanly by mode (~4 days for Standard/Second Class to under 1 day for Same Day), exactly as expected — but the late-delivery rate stays in a similar band across all four modes. This suggests lateness is measured against each mode's own promised window, not absolute delivery speed, so a faster mode isn't automatically a more reliable one.
+- **Faster shipping modes have far worse late-delivery rates, not better ones.** First Class averages 2.00 days but is late 95% of the time; Standard Class averages 4.00 days and is late only 38% of the time (Second Class: 3.99 days / 77% late; Same Day: 0.48 days / 46% late). This points to each mode's promised delivery window being the real driver of lateness, not absolute shipping speed — a tight promise (First Class) is far easier to miss than a generous one (Standard Class), even when the actual fulfillment is faster in absolute terms.
 - **Profit concentrates in two markets.** Western Europe and Central America lead by a wide margin; the remaining regions form a long, thin tail rather than a gradual decline.
 - **Q4 2017 (the last complete quarter) shows a genuine revenue slowdown** — distinct from the 2018 data-cutoff artifact, and worth flagging as a real pattern rather than a data issue, though one quarter isn't enough to call it a trend on its own.
 
@@ -42,7 +42,7 @@ The report has two pages: a metrics/visuals page (above) and a written insights 
 
 - Investigate why high-margin categories (Garden, Crafts) sell less — there may be room to grow them through pricing, marketing, or inventory changes.
 - Treat late deliveries and cancellations as separate root causes needing separate fixes, not one shared explanation.
-- Don't recommend "upgrade the shipping mode" as a fix for lateness — investigate fulfillment/scheduling reliability instead, since speed alone doesn't explain the late-delivery rate.
+- Don't recommend upgrading customers to a 'faster' shipping mode as a fix for lateness - the data shows the opposite effect. Investigate whether First Class and Second Class's promised delivery windows are unrealistically tight relative to actual fulfillment capability, rather than assuming faster service is more reliable.
 - Protect and grow Western Europe and Central America before expanding into weaker regions; confirm whether those regions' lower profit reflects a real demand ceiling or a fixable execution gap.
 
 ---
