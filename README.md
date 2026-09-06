@@ -1,4 +1,4 @@
-# DataCo Supply Chain — Profitability Analysis
+# DataCo Supply Chain - Profitability Analysis
 
 A Power BI analysis of DataCo Global's supply chain data, built to answer the question: which markets, product categories, and shipping modes actually drive profit
 
