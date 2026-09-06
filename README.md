@@ -1,24 +1,24 @@
 # DataCo Supply Chain — Profitability Analysis
 
-A Power BI analysis of DataCo Global's supply chain data, built to answer one question: which markets, product categories, and shipping modes actually drive profit — not just revenue.
+A Power BI analysis of DataCo Global's supply chain data, built to answer the question: which markets, product categories, and shipping modes actually drive profit
 
 ## Scope
 
-This dataset supports several possible angles: late-delivery prediction, fraud/order-status analysis, customer segmentation. I deliberately steered away from delivery-risk prediction here, since that's already the subject of a separate ML project ([olist-marketplace-analysis](https://github.com/doniyor117/olist-marketplace-analysis)). The goal for this project was different: build a BI dashboard that a business stakeholder could actually use to decide where to invest — by region, category, and shipping strategy — using Power Query and DAX rather than a predictive model.
+This dataset supports several possible angles: late-delivery prediction, fraud/order-status analysis, customer segmentation. I deliberately steered away from delivery-risk prediction here, since that's already the subject of a separate ML project ([olist-marketplace-analysis](https://github.com/doniyor117/olist-marketplace-analysis)). The goal for this project was different: build a BI dashboard that a business stakeholder could actually use to decide where to invest - by region, category, and shipping strategy using Power Query and DAX rather than a predictive model.
 
 ## Data
 
-[DataCo Smart Supply Chain dataset](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis) — ~180,000 order-line records across 5 markets and 24 order regions, 2015–2018.
+[DataCo Smart Supply Chain dataset](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis) - ~180,000 order-line records across 5 markets and 24 order regions, 2015–2018.
 
 The dataset is real (not synthetic), and arrived largely clean. The only two fields with meaningful nulls were `Product Description` and `Order Zipcode`, both dropped as they weren't relevant to this analysis. PII fields (customer email, password, first/last name) and non-analytical fields (product image URL) were also removed.
 
-**Scope note:** the dataset's final quarter (Q1 2018) is a partial period — data collection ends mid-quarter, not at quarter-end. Left in, it renders as a steep artificial drop in every time-based chart, which reads as a business collapse that isn't real. The analysis is scoped to **2015–2017 (12 complete quarters)**; 2018 is excluded entirely rather than shown as a misleading partial bar.
+**Scope note:** the dataset's final quarter (Q1 2018) is a partial period - data collection ends mid-quarter, not at quarter-end. Left in, it renders as a steep artificial drop in every time-based chart, which reads as a business collapse that isn't real. The analysis is scoped to **2015–2017 (12 complete quarters)**; 2018 is excluded entirely rather than shown as a misleading partial bar.
 
 **Canonical revenue field:** the dataset carries two overlapping value columns — `Sales` (pre-discount list price) and `Order Item Total` (actual amount charged after discount). They diverge meaningfully (mean difference ~$20 per line, verified with a pandas check across the full dataset). `Order Item Total` is used as the canonical revenue figure throughout, since it reflects money actually collected, not list price.
 
 ## Tools
 
-Power BI Desktop — Power Query (M) for cleaning and shaping, DAX for measures, native visuals for the report. No external cleaning pipeline; all transformation happens inside the Power Query model.
+Power BI Desktop - Power Query (M) for cleaning and shaping, DAX for measures, native visuals for the report. No external cleaning pipeline; all transformation happens inside the Power Query model.
 
 ## Dashboard
 
@@ -26,7 +26,7 @@ Power BI Desktop — Power Query (M) for cleaning and shaping, DAX for measures,
 
 The report has two pages: a metrics/visuals page (above) and a written insights & recommendations page (below), rather than folding narrative text into the chart page itself.
 
-**Page 1** — KPI row (Total Revenue, Total Profit, Profit Margin, Total Orders, Avg Shipping Days, Avg Scheduled Days), a quarterly revenue/profit/order-count trend, profit by region, profit margin by product category, a late-delivery/delivery-status breakdown, and average shipping days vs. late-delivery rate by shipping mode.
+**Page 1** - KPI row (Total Revenue, Total Profit, Profit Margin, Total Orders, Avg Shipping Days, Avg Scheduled Days), a quarterly revenue/profit/order-count trend, profit by region, profit margin by product category, a late-delivery/delivery-status breakdown, and average shipping days vs. late-delivery rate by shipping mode.
 
 ## Key Findings
 
